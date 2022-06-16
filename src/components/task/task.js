@@ -1,42 +1,42 @@
-import React, { Component } from 'react'
-import { formatDistanceToNow } from 'date-fns'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react';
+import { formatDistanceToNow } from 'date-fns';
+import PropTypes from 'prop-types';
 
 export default class Task extends Component {
   static defaultProps = {
     onChangeInput: () => {},
     saveText: () => {},
-  }
+  };
 
   static propTypes = {
     onChangeInput: PropTypes.func,
     saveText: PropTypes.func,
-  }
+  };
 
   state = {
     value: this.props.description,
-  }
+  };
 
   onChangeInput = (e) => {
     this.setState({
       value: e.target.value,
-    })
-  }
+    });
+  };
 
   saveText = (e) => {
     const { value } = this.state;
     const { id, edit } = this.props;
     if (e.key === 'Enter') {
-      this.props.saveCurrentText(value, id, edit)
+      this.props.saveCurrentText(value, id, edit);
     }
   };
 
   render() {
-    const { taskStatus, createdTime, id, onDeleted, onToggleDone, done, description, edit, editingItem } = this.props
-    const { value } = this.state
-    let classNames = ''
+    const { taskStatus, createdTime, id, onDeleted, onToggleDone, done, description, edit, editingItem } = this.props;
+    const { value } = this.state;
+    let classNames = '';
     if (done) {
-      classNames += 'description'
+      classNames += 'description';
     }
 
     return (
@@ -64,6 +64,6 @@ export default class Task extends Component {
           )}
         </div>
       </li>
-    )
+    );
   }
 }

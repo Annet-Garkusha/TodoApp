@@ -27,7 +27,6 @@
     "prepare": "husky install",
     "pre-commit": "lint-staged"
   },
-
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -49,6 +48,7 @@
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
   "devDependencies": {
+    "@babel/eslint-parser": "^7.18.2",
     "babel-eslint": "^10.1.0",
     "eslint": "^8.17.0",
     "eslint-config-airbnb": "^19.0.4",
@@ -61,7 +61,6 @@
     "husky": "^8.0.1",
     "lint-staged": "^13.0.1"
   },
-
   "lint-staged": {
     "*.js": [
       "npm run lint:fix",

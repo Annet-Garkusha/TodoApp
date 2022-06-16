@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+
 import NewTaskForm from '../new-task-form/new-task-form';
 import TaskList from '../task-list/task-list';
 import Footer from '../footer/footer';
@@ -125,7 +126,7 @@ export default class TodoApp extends Component {
       return el;
     });
 
-    this.setState(({ taskData }) => {
+    this.setState(() => {
       return { taskData: newTask };
     });
   };

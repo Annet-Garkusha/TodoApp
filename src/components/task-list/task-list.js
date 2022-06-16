@@ -10,11 +10,11 @@ const TaskList = ({ onDeleted, todos, onToggleDone, editingItem, saveCurrentText
     onToggleDone: () => {},
     editingItem: () => {},
     saveCurrentText: () => {},
-  }
+  };
 
   TaskList.propTypes = {
     todos: PropTypes.array,
-  }
+  };
 
   const elements = todos.map((item) => (
     <Task
@@ -25,8 +25,8 @@ const TaskList = ({ onDeleted, todos, onToggleDone, editingItem, saveCurrentText
       editingItem={editingItem}
       saveCurrentText={saveCurrentText}
     />
-  ))
-  return <ul className="todo-list">{elements}</ul>
-}
+  ));
+  return <ul className="todo-list">{elements}</ul>;
+};
 
 export default TaskList;
