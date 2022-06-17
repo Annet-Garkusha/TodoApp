@@ -11,7 +11,7 @@
     "plugin:import/errors",
     "plugin:import/warnings"
   ],
-  
+
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true,
@@ -22,7 +22,7 @@
     "requireConfigFile": false,
     "babelOptions": {
       "presets": ["@babel/preset-react"]
-      }
+    }
   },
   "parser": "@babel/eslint-parser",
   "plugins": ["react", "prettier", "import"],
@@ -45,14 +45,7 @@
     "import/order": [
       2,
       {
-        "groups": [
-          "builtin",
-          "external",
-          "internal",
-          "parent",
-          "sibling",
-          "index"
-        ],
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
         "newlines-between": "always"
       }
     ]
