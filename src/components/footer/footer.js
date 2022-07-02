@@ -1,32 +1,23 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 
 import TasksFilter from '../tasks-filter/tasks-filter';
 import './footer.css';
 
-export default class Footer extends Component {
-  static defaultProps = {
-    itemsLeft: 'items left',
-    clearCompleted: 'Clear completed',
-    clearFilter: () => {},
-  };
+const Footer = (props) => {
+  const [itemsLeft] = useState('items left');
+  const [clearCompleted] = useState('Clear completed');
 
-  static propTypes = {
-    itemsLeft: PropTypes.string,
-    clearCompleted: PropTypes.string,
-    clearFilter: PropTypes.func,
-  };
-  render() {
-    return (
-      <footer className="footer">
-        <span className="todo-count">
-          {this.props.done} {this.props.itemsLeft}
-        </span>
-        <TasksFilter taskData={this.props.todos} onToggleFilter={this.props.onToggleDone} flag={this.props.flag} />
-        <button className="clear-completed" onClick={this.props.clearFilter}>
-          {this.props.clearCompleted}
-        </button>
-      </footer>
-    );
-  }
-}
+  return (
+    <footer className="footer">
+      <span className="todo-count">
+        {props.done} {itemsLeft}
+      </span>
+      <TasksFilter taskData={props.todos} onToggleFilter={props.onToggleDone} flag={props.flag} />
+      <button className="clear-completed" onClick={props.clearFilter}>
+        {clearCompleted}
+      </button>
+    </footer>
+  );
+};
+
+export default Footer;
